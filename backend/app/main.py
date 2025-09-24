@@ -62,3 +62,7 @@ def get_records(session: Session = Depends(get_session)):
 @app.get("/record/{id}")
 def get_record(id: int):
     return get_record_from_chain(id)
+
+@app.get("/")
+def root():
+    return {"message": "Hello from Render + FastAPI!"}
